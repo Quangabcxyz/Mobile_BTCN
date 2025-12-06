@@ -1,20 +1,20 @@
-\# Mobile\_Bai\_Tap
+# Mobile_Bai_Tap
 
 
 
-\## Thông Tin Sinh Viên
+## Thông Tin Sinh Viên
 
-\* \*\*Họ tên:\*\* Nguyễn Hồng Quang
+**Họ tên:** Nguyễn Hồng Quang
 
-\* \*\*Mã số sinh viên:\*\* 035205010472
+**Mã số sinh viên:** 035205010472
 
-\* \*\*Môn học:\*\* Lập trình thiết bị di động
+**Môn học:** Lập trình thiết bị di động
 
-\* \*\*Trường:\*\* Đại học Giao Thông Vận Tải (UTH)
+**Trường Đại học Giao Thông Vận Tải (UTH)**
 
 
 
-\## Cấu Trúc Thư Mục Tổng Quan
+## Cấu Trúc Thư Mục Tổng Quan
 
 Dưới đây là danh sách bài tập theo tuần:
 
@@ -22,9 +22,9 @@ Dưới đây là danh sách bài tập theo tuần:
 
 ├── Tuan1
 
-│   ├── app (Source code Android)
+│   ├── app
 
-│   ├── Tra\_loi\_cau\_hoi.txt
+│   ├── Tra_loi_cau_hoi.txt
 
 │   └── (Các tài liệu liên quan khác)
 
@@ -34,7 +34,8 @@ Dưới đây là danh sách bài tập theo tuần:
 
 ---
 
-\### Ghi chú:
+### Bài tập:
 
-\* \*\*Tuần 1:\*\* Làm quen với GitHub, tạo Project và thiết kế giao diện (Layout) cơ bản.
-
+**Tuần 1:** Trả lời câu hỏi, làm bài tập mẫu, chọn đề tài, lên ý tưởng, nghiên cứu phân tích và cho ra toàn bộ thiết kế.
+<img width="2614" height="1482" alt="image" src="https://github.com/user-attachments/assets/82ca2505-5c03-4d44-a38d-f63d8a8b933b" />
+<img width="2604" height="1470" alt="image" src="https://github.com/user-attachments/assets/0dcd29d6-cb4e-451e-951e-29c6d29a42f1" />
