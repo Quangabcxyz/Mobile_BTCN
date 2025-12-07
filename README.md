@@ -16,7 +16,7 @@
 
 ## Cấu Trúc Thư Mục Tổng Quan
 
-Dưới đây là danh sách bài tập theo tuần:
+Danh sách bài tập theo tuần:
 
 
 
