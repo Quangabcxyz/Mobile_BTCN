@@ -1,0 +1,23 @@
+1. Thế nào là Nullable
+- Trong Kotlin, hệ thống chia làm 2 phe:
++ Phe "Không được rỗng" (Non-Nullable - mặc định): Tiêu chuẩn, khi khai báo String, Int,...Mặc định bắt buộc phải có giá trị.
+Như một cái hộp, lúc nào cũng phải có đồ vật bên trong vd: var quang: String = "cntt".
+
++ Phe "Có thể rỗng" (Nullable - có dấu ?): cho phép biến đó nhận giá trị null (rỗng). Có thể đánh dấu bằng cách thêm ? sau kiểu dữ liệu.
+vd: var quang: String? = "cntt". Lúc này gán ten = null -> Hợp lệ.
+
+2. khi nào nên/ không nên dùng?
+- Nên dùng ? khi: Dữ liệu đó là tùy chọn. vd: nhập tên đệm, người có người không có > dùng String?
+
+- Không nên dùng ? khi: dữ liệu đó là bắt buộc để app hoạt động. vd: Mật khẩu,...
+
+3. Cách thức xử lý
+?: Cho phép null.
+
+?.: Gõ cửa nhẹ nhàng (nếu null thì thôi).
+
+?:: Lốp dự phòng (nếu null thì dùng cái khác).
+
+let: Nếu có thì làm (thực thi khối lệnh).
+
+!!: Liều ăn nhiều (ép dùng, null thì chết).
