@@ -32,9 +32,17 @@ Danh sách bài tập theo tuần:
 
 │   ├── BTVN02
 
+├── Week3
+
+│   ├── BTEmail
+
+│   ├── Nullable
+
+│   ├── ThanhToan
+
+│   ├── QL ThuVien
+
 ├── README.md
-
-
 
 ---
 
@@ -52,3 +60,12 @@ Danh sách bài tập theo tuần:
 <img width="2802" height="1584" alt="image" src="https://github.com/user-attachments/assets/37f85503-14dd-4c77-a143-35a8aed17c45" />
 
 <img width="2830" height="1586" alt="image" src="https://github.com/user-attachments/assets/ba0f9851-d075-4ca9-8ef8-9c74ab562650" />
+
+### **Tuần 3:** 
+<img width="2822" height="1572" alt="image" src="https://github.com/user-attachments/assets/e23833dd-9500-4f52-b235-9dcedbbc0c23" />
+
+<img width="2824" height="1582" alt="image" src="https://github.com/user-attachments/assets/a20b8f15-076a-4209-bda1-a7418c18aac9" />
+
+<img width="2820" height="1594" alt="image" src="https://github.com/user-attachments/assets/afb05079-3236-48e3-a4da-5c3fd7ac20b0" />
+
+
