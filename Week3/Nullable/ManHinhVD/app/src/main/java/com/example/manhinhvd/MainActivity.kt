@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +46,7 @@ fun StudentProfile(sv: SinhVien) {
             Spacer(modifier = Modifier.height(8.dp))
 
             // tieu su (null)
-            // c1 : (?:) hien tra tri mac dịnh neu null
+            // c1 : (?:) hien gia tri mac dịnh neu null
             Text(
                 text = "Tiểu sử: ${sv.tieuSu ?: "Chưa cập nhật thông tin"}", // (Elvis)
                 style = MaterialTheme.typography.bodyMedium,
@@ -61,7 +62,7 @@ fun StudentProfile(sv: SinhVien) {
     }
 }
 
-@androidx.compose.ui.tooling.preview.Preview(showBackground = true)
+@Preview(showBackground = true)
 @Composable
 fun PreviewBaiTap() {
     Column {
@@ -72,3 +73,6 @@ fun PreviewBaiTap() {
         StudentProfile(SinhVien("Nguyễn Hồng B", null))
     }
 }
+
+// ?: "Chưa cập nhật thông tin" : toán tử Elvis, Nếu sv.tieuSu bị null, app sẽ không để trống mà tự động điền dòng chữ mặc định vào, giúp UI không bị gãy.
+// .let { ... } : Dòng chữ màu xanh bên dưới chỉ xuất hiện KHI VÀ CHỈ KHI có tiểu sử. Nếu sv.tieuSu là null, khối lệnh trong let bị bỏ qua hoàn toàn, tiết kiệm tài nguyên vẽ UI.
