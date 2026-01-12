@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "236812771722",
+    "project_id": "uthsmarttasks-9f92d",
+    "storage_bucket": "uthsmarttasks-9f92d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236812771722:android:4bf0410e1b2862e9ebe873",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACcv2oVF7Auejuw7BbvJrMqqGV5rDSiKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
