@@ -12,40 +12,6 @@
 
 **Trường Đại học Giao Thông Vận Tải (UTH)**
 
-
-
-## Cấu Trúc Thư Mục Tổng Quan
-
-Danh sách bài tập theo tuần:
-
-
-
-├── Week1
-
-│   ├── app
-
-│   ├── Tra_loi_cau_hoi.txt
-
-├── Week2
-
-│   ├── BTVN01
-
-│   ├── BTVN02
-
-├── Week3
-
-│   ├── BTEmail
-
-│   ├── Nullable
-
-│   ├── ThanhToan
-
-│   ├── QL ThuVien
-
-├── README.md
-
----
-
 ## Bài tập:
 
 
@@ -68,4 +34,18 @@ Danh sách bài tập theo tuần:
 
 <img width="2820" height="1594" alt="image" src="https://github.com/user-attachments/assets/afb05079-3236-48e3-a4da-5c3fd7ac20b0" />
 
+### **Tuần 4:** 
+ <img width="2560" height="1431" alt="image" src="https://github.com/user-attachments/assets/3afb3f13-7993-4618-8af8-8ae2829b9d44" />
 
+ <img width="2560" height="1436" alt="image" src="https://github.com/user-attachments/assets/1b4f97be-5729-44b5-82f5-6b8bf8aef2b1" />
+ 
+### **Tuần 5:** 
+<img width="2818" height="1594" alt="image" src="https://github.com/user-attachments/assets/73f9b4e2-e722-4d1f-97a4-2676891da270" />
+
+<img width="2816" height="1588" alt="image" src="https://github.com/user-attachments/assets/13b8436f-9d4c-4d6e-afcc-47709d6f223f" />
+
+### **Tuần 6:** 
+<img width="2634" height="1482" alt="image" src="https://github.com/user-attachments/assets/248b654e-3613-4147-bdea-4786130bc210" />
+
+### **Tuần 7:** 
+<img width="1316" height="742" alt="image" src="https://github.com/user-attachments/assets/9f9be955-49a6-4c0a-aac8-9c9ab23dc69e" />
