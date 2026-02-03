@@ -46,3 +46,6 @@
 
 ### **Tuần 6:** 
 <img width="2634" height="1482" alt="image" src="https://github.com/user-attachments/assets/248b654e-3613-4147-bdea-4786130bc210" />
+
+### **Tuần 7:** 
+<img width="1316" height="742" alt="image" src="https://github.com/user-attachments/assets/9f9be955-49a6-4c0a-aac8-9c9ab23dc69e" />
