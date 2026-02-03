@@ -23,7 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.thuvien.ui.theme.ThuVienTheme
 
-class MainActivity : ComponentActivity() {
+class MainActivity : ComponentActivity() {                                  // Kế thừa
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -168,7 +168,7 @@ fun DashboardTab(
 @Composable
 fun BookListTab(books: MutableList<Book>, currentUser: User, users: List<User>) {
     Column {
-        Text(text = "Kho Sách", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+        Text(text = "Kho sách", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.height(10.dp))
         BookListContent(books, currentUser, users)
     }
@@ -203,7 +203,7 @@ fun BookListContent(
 ) {
     LazyColumn {
         items(books.size) { index ->
-            BookItem(
+            BookItem(                                           // Tất cả sự phức tạp về giao diện đã được trừu tượng hóa (ẩn đi) bên trong Component BookItem.
                 book = books[index],
                 users = users,
                 onBorrowClick = { clickedBook ->
@@ -216,7 +216,10 @@ fun BookListContent(
 }
 
 @Composable
-fun BookItem(book: Book, users: List<User>, onBorrowClick: (Book) -> Unit) {
+fun BookItem(
+    book: Book,
+    users: List<User>,
+    onBorrowClick: (Book) -> Unit) {
     val borrowerName = if (book.borrowedById != null) {
         users.find { it.id == book.borrowedById }?.name
     } else null
@@ -255,8 +258,13 @@ fun BookItem(book: Book, users: List<User>, onBorrowClick: (Book) -> Unit) {
     }
 }
 
-data class Book(val id: Int, val title: String, var borrowedById: Int? = null)
-data class User(val id: Int, val name: String)
+data class Book(                        // Đóng gói tất cả thông tin đó vào một thực thể duy nhất là Book
+    val id: Int,
+    val title: String,
+    var borrowedById: Int? = null)      //  Đóng gói trạng thái mượn vào trong sách
+data class User(
+    val id: Int,
+    val name: String)
 
 fun getLibraryBooks() = listOf(
     Book(1, "Sách Văn"),

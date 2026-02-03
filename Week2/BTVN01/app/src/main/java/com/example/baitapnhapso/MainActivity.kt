@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             // giao diện chính
             MainScreen()
-        }
+        } 
     }
 }
 
@@ -47,7 +47,6 @@ fun MainScreen() {
             .padding(top = 60.dp, start = 20.dp, end = 20.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Tiêu đề
         Text(
             text = "Thực hành 02",
             fontSize = 24.sp,
@@ -65,7 +64,6 @@ fun MainScreen() {
                 value = textInput,
                 onValueChange = {
                     textInput = it
-                    // Khi gõ tạm thời tắt lỗi
                     isError = false
                 },
                 label = { Text("Nhập vào số lượng") },
@@ -81,16 +79,15 @@ fun MainScreen() {
             Button(
                 onClick = {
                     val number = textInput.toIntOrNull()
-                    // kiểm tra điều kiện
+                    // kiểm tra
                     if (number != null && number > 0) {
-                        // nếu đúng là số và lớn hơn 0
+
                         isError = false
-                        // tạo ra danh sách từ 1-...
+
                         dataList = (1..number).toList()
                     } else {
-                        // nếu sai
                         isError = true
-                        dataList = emptyList() // xóa danh sách cũ
+                        dataList = emptyList()
                     }
                 },
                 shape = RoundedCornerShape(10.dp),

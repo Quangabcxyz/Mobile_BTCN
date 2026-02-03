@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier
                         .fillMaxSize()
-                        .safeDrawingPadding(), // ne tai tho
+                        .safeDrawingPadding(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     PreviewBaiTap()
@@ -28,7 +28,10 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-data class SinhVien(val ten: String, val tieuSu: String?)
+data class SinhVien(
+    val ten: String,      // không thể rỗng
+    val tieuSu: String?  // có thể có hoặc rỗng
+)
 
 @Composable
 fun StudentProfile(sv: SinhVien) {
@@ -45,16 +48,12 @@ fun StudentProfile(sv: SinhVien) {
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            // tieu su (null)
-            // c1 : (?:) hien gia tri mac dịnh neu null
             Text(
-                text = "Tiểu sử: ${sv.tieuSu ?: "Chưa cập nhật thông tin"}", // (Elvis)
+                text = "Tiểu sử: ${sv.tieuSu ?: "Chưa cập nhật thông tin"}", // (Elvis) chống màn hình trắng
                 style = MaterialTheme.typography.bodyMedium,
                 color = if (sv.tieuSu == null) Color.Gray else Color.Black
             )
-
-            // c2  : .let de hien thi tphần UI khi co du lieu
-            sv.tieuSu?.let { // (Safe Call + Let)
+            sv.tieuSu?.let {
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(text = "(Đã xác thực nội dung: $it)", color = Color.Blue)
             }
@@ -66,13 +65,8 @@ fun StudentProfile(sv: SinhVien) {
 @Composable
 fun PreviewBaiTap() {
     Column {
-        // TH 1: Đầy đủ thông tin
-        StudentProfile(SinhVien("Nguyễn Hồng Quang", "ngại va chạm"))
+        StudentProfile(SinhVien("Nguyễn Hồng Quang", "thích xem phim"))
 
-        // TH 2: Thiếu tiểu sử (NULL)
         StudentProfile(SinhVien("Nguyễn Hồng B", null))
     }
 }
-
-// ?: "Chưa cập nhật thông tin" : toán tử Elvis, Nếu sv.tieuSu bị null, app sẽ không để trống mà tự động điền dòng chữ mặc định vào, giúp UI không bị gãy.
-// .let { ... } : Dòng chữ màu xanh bên dưới chỉ xuất hiện KHI VÀ CHỈ KHI có tiểu sử. Nếu sv.tieuSu là null, khối lệnh trong let bị bỏ qua hoàn toàn, tiết kiệm tài nguyên vẽ UI.

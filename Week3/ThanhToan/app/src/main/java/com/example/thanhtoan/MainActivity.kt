@@ -21,13 +21,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.thanhtoan.ui.theme.ThanhToanTheme
 
-// lớp
-class MainActivity : ComponentActivity() {
+class MainActivity : ComponentActivity() {                              // kế thừa
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            ThanhToanTheme {                                                 // Kế thừa
+            ThanhToanTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -41,7 +40,6 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun PaymentScreen() {
-    //  khai bao bien dùng để nhớ trạng thái đang chọn cái nào, ban đầu là null
     var selectedMethod by remember { mutableStateOf<PaymentMethod?>(null) }
     val methods = getPaymentMethods()
 
@@ -62,9 +60,11 @@ fun PaymentScreen() {
                 tint = Color.Gray
             )
             Spacer(modifier = Modifier.height(16.dp))
-            Text("Vui lòng chọn phương thức", style = MaterialTheme.typography.bodyLarge)
+            Text("Vui lòng chọn phương thức",
+                style = MaterialTheme.typography.bodyLarge,
+                fontSize = 20.sp
+                )
         } else {
-            // khi đã chọn thì hiện logo
             Image(
                 painter = painterResource(id = selectedMethod!!.iconResId),
                 contentDescription = null,
@@ -81,9 +81,9 @@ fun PaymentScreen() {
         Spacer(modifier = Modifier.height(50.dp))
 
         // phần giữa
-        methods.forEach { method ->//Đa hình
+        methods.forEach { method ->                                // đa hình
             PaymentRow(
-                method = method,                                //Trừu tượng
+                method = method,
                 isSelected = (selectedMethod == method),
                 onSelect = { selectedMethod = method }
             )
@@ -91,7 +91,6 @@ fun PaymentScreen() {
 
         Spacer(modifier = Modifier.weight(1f))
 
-        // nút tiếp tục
         if (selectedMethod != null) {
             Button(
                 onClick = { /* Xử lý tiếp theo */ },
@@ -121,7 +120,9 @@ fun PaymentRow(
         border = if (isSelected) androidx.compose.foundation.BorderStroke(2.dp, Color.Blue) else null
     ) {
         Row(
-            modifier = Modifier.padding(16.dp).fillMaxWidth(),
+            modifier = Modifier.
+            padding(16.dp).
+            fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
             RadioButton(
@@ -137,26 +138,23 @@ fun PaymentRow(
             Image(
                 painter = painterResource(id = method.iconResId),
                 contentDescription = method.name,
-                modifier = Modifier.size(40.dp)
+                modifier = Modifier.size(70.dp)
             )
         }
     }
 }
 
-data class PaymentMethod( // lớp
-    // 3 thứ trong cái khuôn
-    val id: Int,                                // Đóng gói
-    val name: String,
+data class PaymentMethod(
+    val id: Int,
+    val name: String,                        // đóng gói
     val iconResId: Int
 )
 
 fun getPaymentMethods(): List<PaymentMethod> {
     return listOf(
-        // các đối tượng tạo từ cái khuôn
         PaymentMethod(1, "PayPal", R.drawable.ic_paypal),
         PaymentMethod(2, "Google Pay", R.drawable.ic_googlepay),
         PaymentMethod(3, "Apple Pay", R.drawable.ic_applepay)
-        // có thể thêm phương thức thanh toán khác
     )
 }
 @Preview(showBackground = true, showSystemUi = true)

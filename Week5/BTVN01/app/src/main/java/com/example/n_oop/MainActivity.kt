@@ -199,7 +199,7 @@ data class OnboardingData(                                                      
     val icon: ImageVector
 )
 
-val onboardingPages = listOf(                                                                              // thêm nhiều màn hình khác
+val onboardingPages = listOf(
     OnboardingData(
         title = "Quản lý thời gian dễ dàng",
         description = "Với phương pháp quản lý dựa trên mức độ ưu tiên và nhiệm vụ hàng ngày, bạn sẽ dễ dàng quản lý và xác định những nhiệm vụ cần được ưu tiên thực hiện trước tiên.",

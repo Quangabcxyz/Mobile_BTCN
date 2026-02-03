@@ -27,12 +27,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CalculatorScreen() {
-    // quan li trang thai
-    // luu gia tri nhap so t1 va t2
     var number1 by remember { mutableStateOf("") }
     var number2 by remember { mutableStateOf("") }
-
-    // luu ket qua hien thi
     var result by remember { mutableStateOf("") }
 
     // ham tinh toan

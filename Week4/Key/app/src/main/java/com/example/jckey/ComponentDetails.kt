@@ -72,7 +72,7 @@ import androidx.compose.material3.OutlinedIconButton
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 
-// 1. Màn hình chi tiết cho TEXT
+// 1. Màn hình
 @Composable
 fun TextDetail() {
     Column(
@@ -82,22 +82,22 @@ fun TextDetail() {
             .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally
-    ) {
+    ) {             //1. Kiểu cơ bản
         StyleExample(
-            label = "Font Weight (Độ đậm)",
+            label = "Độ đậm",
             demo = {
                 Text(text = "Bold Text", fontWeight = FontWeight.Bold, fontSize = 24.sp)
             }
         )
 
         StyleExample(
-            label = "Font Style (Kiểu nghiêng)",
+            label = "Kiểu nghiêng",
             demo = {
                 Text(text = "Italic Text", fontStyle = FontStyle.Italic, fontSize = 24.sp)
             }
         )
         StyleExample(
-            label = "Shadow Effect (Đổ bóng)",
+            label = "Đổ bóng",
             demo = {
                 Text(
                     text = "Shadow Text",
@@ -114,56 +114,55 @@ fun TextDetail() {
             }
         )
 
-        // 2. Font Monospace - Dùng để hiển thị mã code hoặc số liệu
+        // 2. Font Monospace
         StyleExample(
-            label = "Font Family (Kiểu Monospace)",
+            label = "Kiểu Monospace",
             demo = {
                 Text(
                     text = "print('Hello World')",
                     fontSize = 20.sp,
-                    fontFamily = FontFamily.Monospace, // Phông chữ các ký tự rộng bằng nhau
-                    color = Color(0xFF006400) // Màu xanh lá đậm
+                    fontFamily = FontFamily.Monospace,
+                    color = Color(0xFF006400)
                 )
             }
         )
 
-        // 3. Highlight (Nền màu) - Dùng để nhấn mạnh
+        // 3. Highlight
         StyleExample(
-            label = "Background Color (Tô nền)",
+            label = "Tô nền",
             demo = {
                 Text(
                     text = " Highlighted Text ",
                     fontSize = 24.sp,
                     color = Color.White,
-                    modifier = Modifier.background(Color.Red) // Tô nền đỏ
+                    modifier = Modifier.background(Color.Red)
                 )
             }
         )
 
-        // 4. Xử lý văn bản quá dài (Ellipsis) - RẤT QUAN TRỌNG
+        // 4. Xử lý văn bản dài
         StyleExample(
-            label = "Max Lines (Cắt bớt khi quá dài)",
+            label = "Cắt bớt khi quá dài",
             demo = {
                 Text(
                     text = "Đây là một đoạn văn bản rất dài, dài lê thê và sẽ bị cắt bớt bằng dấu ba chấm nếu vượt quá giới hạn dòng.",
                     fontSize = 16.sp,
-                    maxLines = 1, // Chỉ cho hiện 1 dòng
-                    overflow = TextOverflow.Ellipsis, // Hiện dấu "..." ở cuối
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis, // Hiện dấu "..."
                     modifier = Modifier.padding(horizontal = 16.dp)
                 )
             }
         )
 
-        // --- NHÓM 3: NÂNG CAO (Giữ lại các cái hay ho cũ) ---
         StyleExample(
-            label = "Letter Spacing (Giãn cách)",
+            label = "Giãn cách",
             demo = {
                 Text(text = "S P A C I N G", fontSize = 20.sp, letterSpacing = 8.sp)
             }
         )
 
         StyleExample(
-            label = "Decoration (Gạch chân & Gạch ngang)",
+            label = "Gạch chân và gạch ngang",
             demo = {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(text = "Underline Text", textDecoration = TextDecoration.Underline, fontSize = 20.sp)
@@ -188,7 +187,7 @@ fun StyleExample(label: String, demo: @Composable () -> Unit) {
     }
 }
 
-// 2. Màn hình chi tiết cho BUTTON
+// 2. BUTTON
 @Composable
 fun ButtonDetail() {
     var count by remember { mutableIntStateOf(0) }
@@ -209,7 +208,7 @@ fun ButtonDetail() {
 
         HorizontalDivider()
         StyleExample(
-            label = "Interactive Buttons (Nút có chức năng)",
+            label = "Nút có chức năng",
             demo = {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
@@ -226,7 +225,7 @@ fun ButtonDetail() {
             }
         )
 
-        // 3. Nút có Icon (Cũng tăng số)
+        // 3. Nút có Icon
         StyleExample(
             label = "Button with Icon",
             demo = {
@@ -242,12 +241,12 @@ fun ButtonDetail() {
             }
         )
 
-        // 4. Nút bị khóa (Không bấm được)
+        // 4. Nút bị khóa
         StyleExample(
-            label = "Disabled State (Không bấm được)",
+            label = "Không bấm được",
             demo = {
                 Button(
-                    onClick = { count++ }, // Dù có code nhưng enabled=false thì không chạy
+                    onClick = { count++ },
                     enabled = false
                 ) {
                     Text("Disabled Button")
@@ -257,7 +256,7 @@ fun ButtonDetail() {
     }
 }
 
-// 3. Màn hình chi tiết cho TEXT FIELD
+// 3. TEXT FIELD
 @Composable
 fun TextFieldDetail() {
     var textNormal by remember { mutableStateOf("") }
@@ -276,7 +275,7 @@ fun TextFieldDetail() {
     ) {
         // 1. Ô nhập cơ bản
         StyleExample(
-            label = "Standard Input (Cơ bản)",
+            label = "Cơ bản",
             demo = {
                 OutlinedTextField(
                     value = textNormal,
@@ -288,9 +287,9 @@ fun TextFieldDetail() {
             }
         )
 
-        // 2. Ô nhập Mật khẩu
+        // 2. Ô nhập pass
         StyleExample(
-            label = "Password Input (Mật khẩu)",
+            label = "Mật khẩu",
             demo = {
                 OutlinedTextField(
                     value = textPassword,
@@ -314,7 +313,7 @@ fun TextFieldDetail() {
 
         // 3. Ô nhập Số
         StyleExample(
-            label = "Number Input (Chỉ nhập số)",
+            label = "Chỉ nhập số",
             demo = {
                 OutlinedTextField(
                     value = textNumber,
@@ -330,15 +329,15 @@ fun TextFieldDetail() {
             }
         )
 
-        // 4. Trạng thái Báo lỗi
+        // 4. Trạng thái báo lỗi
         StyleExample(
-            label = "Error State (Báo lỗi)",
+            label = "Báo lỗi",
             demo = {
                 OutlinedTextField(
                     value = textError,
                     onValueChange = { textError = it },
                     label = { Text("Email") },
-                    isError = textError.isEmpty(), // Giả lập lỗi khi rỗng
+                    isError = textError.isEmpty(),
                     supportingText = {
                         if (textError.isEmpty()) {
                             Text("Field cannot be empty!", color = MaterialTheme.colorScheme.error)
@@ -351,7 +350,7 @@ fun TextFieldDetail() {
     }
 }
 
-// 4. Nhóm Hiển thị (Image, Icon)
+// 4. Nhóm Hiển thị
 @Composable
 fun ImageDetail() {
     Column(
@@ -362,44 +361,44 @@ fun ImageDetail() {
         verticalArrangement = Arrangement.spacedBy(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // 1. Ảnh Avatar Tròn (Rất phổ biến trong Profile)
+        // 1. Ảnh Avatar Tròn
         StyleExample(
-            label = "Circular Avatar (Ảnh tròn + Viền)",
+            label = "Ảnh tròn + Viền",
             demo = {
                 Image(
-                    imageVector = Icons.Default.AccountBox, // Giả lập ảnh đại diện
+                    imageVector = Icons.Default.AccountBox,
                     contentDescription = "Avatar",
-                    contentScale = ContentScale.Crop, // Cắt ảnh cho vừa khung
+                    contentScale = ContentScale.Crop,
                     modifier = Modifier
-                        .size(120.dp) // Kích thước ảnh
-                        .clip(CircleShape) // Cắt thành hình tròn
-                        .background(Color.LightGray) // Màu nền giả lập
-                        .border(4.dp, MaterialTheme.colorScheme.primary, CircleShape) // Viền xanh bao quanh
+                        .size(120.dp)
+                        .clip(CircleShape)
+                        .background(Color.LightGray)
+                        .border(4.dp, MaterialTheme.colorScheme.primary, CircleShape)
                 )
             }
         )
 
-        // 2. Ảnh Bo góc (Rounded Corners - Modern UI)
+        // 2. Ảnh Bo góc
         StyleExample(
-            label = "Rounded Corners (Bo góc hiện đại)",
+            label = "Bo góc hiện đại",
             demo = {
                 Image(
-                    imageVector = Icons.Default.Home, // Dùng tạm icon Home làm ảnh bìa
+                    imageVector = Icons.Default.Home,
                     contentDescription = "Cover Image",
                     contentScale = ContentScale.Fit,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(200.dp) // Chiều cao cố định
-                        .clip(RoundedCornerShape(16.dp)) // Bo góc 16dp
-                        .background(Color(0xFFE0F7FA)) // Màu nền xanh nhạt
-                        .padding(32.dp) // Padding để icon bên trong nhỏ lại chút cho đẹp
+                        .height(200.dp)
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(Color(0xFFE0F7FA))
+                        .padding(32.dp)
                 )
             }
         )
 
-        // 3. Aspect Ratio (Tỷ lệ khung hình)
+        // 3. Aspect Ratio
         StyleExample(
-            label = "Color Filter (Đổi màu ảnh)",
+            label = "Đổi màu ảnh",
             demo = {
                 Image(
                     imageVector = Icons.Default.Favorite,
@@ -423,7 +422,7 @@ fun IconDetail() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         StyleExample(
-            label = "Sizes & Tints (Kích thước & Màu)",
+            label = "Kích thước và màu",
             demo = {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Icon(Icons.Default.Star, null, Modifier.size(24.dp), tint = Color.Gray)
@@ -437,7 +436,7 @@ fun IconDetail() {
 
         // 2. IconButton
         StyleExample(
-            label = "Icon Button (Nút bấm dạng Icon)",
+            label = "Nút bấm dạng Icon",
             demo = {
                 Row(
                     horizontalArrangement = Arrangement.spacedBy(24.dp)
@@ -462,7 +461,7 @@ fun IconDetail() {
     }
 }
 
-// 5. Nhóm Lựa chọn (Checkbox, Switch)
+// 5. Nhóm lựa chọn
 @Composable
 fun CheckboxDetail() {
     var isChecked by remember { mutableStateOf(false) }
@@ -477,7 +476,7 @@ fun CheckboxDetail() {
                 checked = isChecked,
                 onCheckedChange = { isChecked = it }
             )
-            Text(if (isChecked) "Đã chọn (Checked)" else "Chưa chọn (Unchecked)")
+            Text(if (isChecked) "Đã chọn" else "Chưa chọn")
         }
     }
 }
@@ -496,11 +495,11 @@ fun SwitchDetail() {
             onCheckedChange = { isToggled = it }
         )
         Spacer(modifier = Modifier.height(8.dp))
-        Text(if (isToggled) "Trạng thái: BẬT (ON)" else "Trạng thái: TẮT (OFF)")
+        Text(if (isToggled) "Trạng thái: BẬT" else "Trạng thái: TẮT")
     }
 }
 
-// 6. Nhóm Bố cục (Column, Row, Box)
+// 6. Nhóm bố cục
 @Composable
 fun ColumnDetail() {
     Column(
@@ -562,10 +561,10 @@ fun ColorBox(color: androidx.compose.ui.graphics.Color) {
     )
 }
 
-// 7. Màn hình chi tiết cho RadioButton
+// 7. RadioButton
 @Composable
 fun RadioButtonDetail() {
-    val options = listOf("Option A", "Option B", "Option C")
+    val options = listOf("Buồn", "Vui", "Không vui buồn")
     var selectedOption by remember { mutableStateOf(options[0]) }
 
     Column(
@@ -594,7 +593,7 @@ fun RadioButtonDetail() {
     }
 }
 
-// 8. Màn hình chi tiết cho Slider
+// 8. Slider
 @Composable
 fun SliderDetail() {
     var sliderPosition by remember { mutableFloatStateOf(0f) }
@@ -615,7 +614,7 @@ fun SliderDetail() {
     }
 }
 
-// 9. Màn hình chi tiết cho ProgressBar (Loading)
+// 9.ProgressBar
 @Composable
 fun ProgressDetail() {
     Column(

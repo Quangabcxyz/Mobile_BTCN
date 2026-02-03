@@ -187,7 +187,6 @@ fun Screen4(navController: NavController, email: String, code: String, pass: Str
     Column(modifier = Modifier.fillMaxSize().padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         UTHHeader("Xác nhận", "Chúng tôi luôn sẵn sàng hỗ trợ bạn!", onBack = { navController.popBackStack() })
 
-        // Các ô hiển thị thông tin
         OutlinedTextField(value = email, onValueChange = {}, label = { Text("Email") }, readOnly = true, modifier = Modifier.fillMaxWidth())
         Spacer(modifier = Modifier.height(8.dp))
         OutlinedTextField(value = code, onValueChange = {}, label = { Text("Code") }, readOnly = true, modifier = Modifier.fillMaxWidth())
